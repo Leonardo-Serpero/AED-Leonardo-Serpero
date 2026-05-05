@@ -1,0 +1,52 @@
+#include <string.h>
+#include <stdio.h>
+int Longitud(char palabra[]);
+void PalabraVacio(int longitud);
+void Concatenacion(char cadena1[],char cadena2[]);
+int main()
+{
+
+char palabra1[15]="Ozthia";	
+char palabra2[15]="";
+int longitud1=0;
+int longitud2=0;
+longitud1=Longitud(palabra1);
+PalabraVacio( longitud1);
+longitud2=Longitud(palabra2);
+PalabraVacio(longitud2);
+Concatenacion(palabra1,palabra2);	
+}
+int Longitud(char palabra[])
+{
+int	longitud=0;
+	if(palabra[0]!='\0')
+	{
+		while(palabra[longitud]!='\0')
+		{
+			longitud++;
+		}
+	
+	}
+
+return longitud; 
+}
+
+void PalabraVacio(int longitud)
+{
+	if(longitud>0)
+	{
+		printf("La longitud de la palabra es:%d\n",longitud);
+	}
+	else
+	{
+		printf("La cadena esta vacia\n");	
+	}
+}
+
+void Concatenacion(char cadena1[],char cadena2[])
+{
+	strcat(cadena1,cadena2);
+	printf("%s",cadena1);
+
+}
+
