@@ -1,0 +1,44 @@
+#include <string.h>
+#include <string>
+#include<iostream>
+#include <math.h>
+void AreDecimalDigits(char palabra[],int & posicion,bool & EsONoDigito);
+int main()
+{	
+char palabra[10]="6743895";
+bool EsONoDigito=true;
+int posicion=0;	
+AreDecimalDigits(palabra,posicion,EsONoDigito);
+	
+	if(EsONoDigito)
+	{
+		printf("cadenas de decimales");
+			
+	}
+	else{
+			printf("NO es una cadenas de decimales");
+	}
+	return EsONoDigito;
+}
+
+void AreDecimalDigits(char palabra[],int & posicion,bool & EsONoDigito)
+{
+		if(palabra[posicion]!='\0'&&(palabra[posicion]<48||palabra[posicion]>57))
+		{
+			EsONoDigito=false;
+		}
+	posicion++;		
+	if(EsONoDigito!=false&&palabra[posicion]!='\0')	
+	{
+		AreDecimalDigits(palabra,posicion,EsONoDigito);
+	}
+}
+
+
+
+
+
+
+
+
+
