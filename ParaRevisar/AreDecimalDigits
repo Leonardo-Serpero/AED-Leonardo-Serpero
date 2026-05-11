@@ -1,27 +1,30 @@
-void AreDecimalDigits(char palabra[],int & posicion,bool & EsONoDigito);
+
+int AreDecimalDigits(char palabra[],int & posicion);
 int main()
 {	
-//char palabra[10]="574t975";
-bool EsONoDigito=true;
+int EsDigito;
 int posicion=0;	
-AreDecimalDigits(palabra,posicion,EsONoDigito);
-	
+EsDigito=AreDecimalDigits(palabra,posicion);
 
-	return EsONoDigito;
+return EsDigito;
 }
 
-void AreDecimalDigits(char palabra[],int & posicion,bool & EsONoDigito)
+int AreDecimalDigits(char palabra[],int & posicion)
 {
+	int devolver=1;
 		if(palabra[posicion]=='\0'||(palabra[posicion]!='\0'&&(palabra[posicion]<48||palabra[posicion]>57)))
 		{
-			EsONoDigito=false;
+			devolver=0;
 		}
 	posicion++;		
-	if(EsONoDigito!=false&&palabra[posicion]!='\0')	
+	if(devolver!=0&&palabra[posicion]!='\0')	
 	{
-		AreDecimalDigits(palabra,posicion,EsONoDigito);
+		devolver=AreDecimalDigits(palabra,posicion);
 	}
+return devolver;
+
 }
+
 
 
 
