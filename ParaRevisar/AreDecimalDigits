@@ -9,20 +9,23 @@ EsDigito=AreDecimalDigits(palabra,posicion);
 return EsDigito;
 }
 
-int AreDecimalDigits(char palabra[],int & posicion)
+int AreDecimalDigits(char palabra[])
+{ 
+int devolver=1;
+if(palabra[0]=='\0')
 {
-	int devolver=1;
-		if(palabra[posicion]=='\0'||(palabra[posicion]!='\0'&&(palabra[posicion]<48||palabra[posicion]>57)))
+	devolver=0;
+}
+    for(int posicion=0;devolver!=0&&palabra[posicion]!='\0';posicion++)
+	{
+			
+		if(palabra[posicion]!='\0'&&(palabra[posicion]<48||palabra[posicion]>57))
 		{
 			devolver=0;
+		
 		}
-	posicion++;		
-	if(devolver!=0&&palabra[posicion]!='\0')	
-	{
-		devolver=AreDecimalDigits(palabra,posicion);
-	}
+	}																										  	  																																												 																						                 
 return devolver;
-
 }
 
 
